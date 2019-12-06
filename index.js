@@ -7,10 +7,11 @@ const app = new Koa();
 const router = new Router();
 
 
-router.get('/turing', async (ctx, next) => {
+router.get('/anytalkrobot/turing', async (ctx, next) => {
     const { words } = ctx.request.query;
     try {
         const answer = await TuringRobot(words);
+        console.log('input words : ', words);
         ctx.type = 'text/json';
         ctx.body = { answer };
     } catch (e) {
