@@ -1,0 +1,30 @@
+{
+  "name": "any-talk-robots",
+  "version": "0.0.1",
+  "description": "a robot can talk about anything base on what you talk to him",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyx1994/any-talk-robots.git"
+  },
+  "keywords": [
+    "talk",
+    "server",
+    "node"
+  ],
+  "author": "empty_",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cyx1994/any-talk-robots/issues"
+  },
+  "homepage": "https://github.com/Cyx1994/any-talk-robots#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "koa": "^2.11.0",
+    "koa-router": "^7.4.0"
+  }
+}
