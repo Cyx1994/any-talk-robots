@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Cyx1994/any-talk-robots#readme",
   "dependencies": {
     "axios": "^0.19.0",
+    "js-md5": "^0.7.3",
     "koa": "^2.11.0",
     "koa-router": "^7.4.0"
   }

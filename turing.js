@@ -19,11 +19,11 @@ function getTuringResponse(info) {
             perception: {
                 inputText: {
                     text: info
-                }
+                },
             },
             userInfo: {
                 apiKey: config.turingKey,
-                userId: 'empty_'
+                userId: 'empty'
             }
         }
     };
@@ -31,13 +31,15 @@ function getTuringResponse(info) {
         http(options).then(({ data: { intent: { code }, results } }) => {
             if (code === 4003) {
                 resolve('主人封嘴了！！');
-            } else if (code !== 10005) {
-                reject();
+            } else if (!results) {
+                reject(code);
             } else {
-                if (results.length && results[0].groupType === 0) {
+                if (results.length) {
                     resolve(results[0].values.text);
                 }
             }
+        }, (error) => {
+            reject(error);
         })
     })
 }

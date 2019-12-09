@@ -9,17 +9,17 @@ const router = new Router();
 
 router.get('/anytalkrobot/turing', async (ctx, next) => {
     const { words } = ctx.request.query;
+    ctx.type = 'text/json';
     try {
         const answer = await TuringRobot(words);
         console.log('input words : ', words);
-        ctx.type = 'text/json';
         ctx.body = { answer };
     } catch (e) {
-        console.warn(e);
+        ctx.body = { answer: '没有听懂。。。', error: e };
     }
 });
 
 app.use(router.routes())
     .use(router.allowedMethods());;
 
-app.listen(3000);
+app.listen(3001);
