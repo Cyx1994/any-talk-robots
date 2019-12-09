@@ -22,4 +22,4 @@ router.get('/anytalkrobot/turing', async (ctx, next) => {
 app.use(router.routes())
     .use(router.allowedMethods());;
 
-app.listen(3001);
+app.listen(3000);
